@@ -4,13 +4,13 @@
 //Mydef := 'Olá mundo';  // definicao do tipo "value"
 
 // Uma acao
-OUTPUT('Olá mundo');
+//OUTPUT('Olá mundo');
 //OUTPUT(mydef);
 
 // *****
 // Estruturas de dados basicas em ECL
 // Estrutura RECORD
-/*
+
 rec := RECORD
   STRING10  Firstname;
 	STRING    Lastname;
@@ -28,14 +28,14 @@ ds := DATASET([{'Alysson','Oliveira','M',26,100,1000.50},
 							 {'Odair','Ferreira','M',66,350,6000},
 							 {'Orlando','Silva','U',67,300,4000}],rec);
 OUTPUT(ds);
-*/
+
 // *****
 // Filtragem e tabulaçao de datasets
 // recset := ds(Age<65);
 // recset; //Equivale a: OUTPUT(recset);
 
-// recset := ds(Age<65,Gender='M');
-// recset;
+//recset := ds(Age<65,Gender='M');
+//recset;
 
 // IsSeniorMale := ds.Age<65 AND ds.Gender='M'; //definição do tipo "boolean"
 // recset := ds(IsSeniorMale);
@@ -46,16 +46,16 @@ OUTPUT(ds);
 // recset;						// definição do tipo "recordset"
 // COUNT(recset);    //Equivale a: OUTPUT(COUNT(recset));
 
-// rec2 := RECORD
-  // ds.Gender;
-	// cnt := COUNT(GROUP);
-// END;
+ rec2 := RECORD
+   ds.Gender;
+	 cnt := COUNT(GROUP);
+ END;
 
-// crosstab := TABLE(ds,rec2,Gender);
-// crosstab;
+ crosstab := TABLE(ds,rec2,Gender);
+ crosstab;
 
-// avg := AVE(crosstab,cnt);
-// avg;
+ avg := AVE(crosstab,cnt);
+ avg;
 
 // *****
 // Transformacoes basicas em ECL
